@@ -36,7 +36,6 @@ if resposta_regra == 'regras':
     newprint('''
 O Jogo de Craps consiste em apostar no resultado de um par de dados sorteados aleatóriamente.
 Você começara com X fichas e pode apostá-las nos 4 tipos de apostas a seguir:
-nos 4 tipos de apostas a seguir:
 
 {0}Pass Line Bet{1} – Esta aposta só pode ser feita na fase de “Come Out”. Se a soma dos
 dados lançados for 7 ou 11 o jogador ganha (por exemplo: se apostou 10 fichas, mantem
@@ -51,6 +50,10 @@ outro número, se mantem na fase de “Point” sem perder ou ganhar e se contin
 os dados até um veredito, quando sair ou o número do Point ou o 7, terminando essa
 rodada e deixando começar uma nova em “Come Out”.
 
-As apostas serão sempre de números inteiros positivos de
-fichas, e o jogador começa com uma quantidade de fichas definida por você.
+
+
+
+
+
+
 ''')
