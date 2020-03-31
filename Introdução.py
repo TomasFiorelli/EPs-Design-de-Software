@@ -12,7 +12,7 @@ class style:
 def newprint(texto):
     for indice in range(int(len(texto))):
         print(texto[indice], end = '')
-        time.sleep(0.05)
+        
     print()
 
 # Introdução do Jogo
@@ -21,17 +21,18 @@ print()
 print(style.bold + style.underline + '------ JOGO DE CRAPS ------' + style.original)
 print()
 
-newprint('Digite seu nome: ')
-nome = str(input(style.bold + '> '))
+newprint('Digite seu nome:' + style.bold)
+nome = str(input('> '))
 nome = style.bold + nome + style.original
 print(style.original)
 
 newprint('Bem-vindo, {}, ao Jogo de Craps!'.format(nome))
-
-newprint('Deseja ler as regras ou prefere ir direto ao jogo (regras/jogo)?')
-resposta_regra = str(input(style.bold + '> '))
+newprint('Deseja ler as regras ou prefere ir direto ao jogo (regras/jogo)?' + style.bold)
 
 while True:
+    resposta_regra = str(input('> '))
+    print(style.original, end = '')
+
     if resposta_regra == 'regras':
         newprint('''
 O Jogo de Craps consiste em apostar no resultado de um par de dados sorteados aleatóriamente.
@@ -60,12 +61,14 @@ jogador ganha o triplo (se apostou 10 fichas, fica com as 10 e ganha mais 30).
 dados derem 2, 3 ou 12 o jogador ganha sete vezes o que apostou, senão perde a aposta.
 
 {0}Twelve{1} – Esta aposta pode ser feita em qualquer fase do jogo. Nesta aposta se o dados
-derem 12 o jogador ganha trinta vezes o que apostou, senão perde a aposta.
-
-'''.format(style.bold, style.original))
-    break
+derem 12 o jogador ganha trinta vezes o que apostou, senão perde a aposta.'''.format(style.bold, style.original))
+        print()
+        input('Aperte "enter" para prosseguir...')
+        print()
+        break
 
     elif resposta_regra == 'jogo':
         break
+
     else:
         newprint('Desculpa, mas não entendi sua resposta. Digite novamente (regras/jogo).')
