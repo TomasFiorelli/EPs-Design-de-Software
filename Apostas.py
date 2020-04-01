@@ -6,7 +6,7 @@ def twelve (dado1,dado2,soma_dados, fichas, aposta):
         print("Parabéns! Você ganhou {0} fichas! Agora você possui {1} fichas!".format(x, x1))
     else:
         x1 = fichas - aposta
-        print("Você perdeu {0} fichas! E agora restam {1} fichas!".format(aposta, x1))
+        print("Que pena! Você perdeu {0} fichas! E agora restam {1} fichas!".format(aposta, x1))
 
 ######################anycraps#########################################
 def any_craps (dado1,dado2,soma_dados, fichas, aposta):
@@ -16,7 +16,7 @@ def any_craps (dado1,dado2,soma_dados, fichas, aposta):
         print("Parabéns! Você ganhou {0} fichas! Agora você possui {1} fichas!".format(y, y1))
     else:
         y1= fichas-aposta
-        print("Você perdeu {0} fichas! E agora restam {1}!".format(aposta,y1))
+        print("Que pena! Você perdeu {0} fichas! E agora restam {1} fichas!".format(aposta,y1))
 
 ##########################field#####################################
 def field (dado1,dado2,soma_dados, fichas, aposta):
@@ -26,7 +26,7 @@ def field (dado1,dado2,soma_dados, fichas, aposta):
         print("Parabéns! Você ganhou {0} fichas! Agora você possui {1} fichas!".format(p, p1))
     elif soma_dados == 5 or soma_dados == 6 or soma_dados == 7 or soma_dados == 8:
         p1= fichas-aposta
-        print("Que pena! Você perdeu {0} fichas! E agora restam {1}!".format(aposta,p))
+        print("Que pena! Você perdeu {0} fichas! E agora restam {1}!".format(aposta,p1))
     elif soma_dados == 2:
         p= aposta*2
         p1= fichas + p
