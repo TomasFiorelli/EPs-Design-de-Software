@@ -55,7 +55,7 @@ elif tipo_de_aposta == 'field':
     field (dado1,dado2,soma_dados, fichas_totais, aposta)
 
 elif tipo_de_aposta == 'pass line bet':
-    aposta = int(input("Certo, você escolheu a aposta Pass Line Bet! Você possui {0} fichas, quanto você deseja apostar?".format(fichas_totais))))
+    aposta = int(input("Certo, você escolheu a aposta Pass Line Bet! Você possui {0} fichas, quanto você deseja apostar?".format(fichas_totais)))
     dado1 = random.randint (1,6)
     dado2 = random.randint (1,6)
     soma_dados = dado1 + dado2    
