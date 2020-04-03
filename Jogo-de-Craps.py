@@ -200,3 +200,4 @@ elif fichas_totais <= 500:
     newprint('Puts, {0}, você não teve lucro dessa vez... Você terminou com {1} fichas. Boa sorte na próxima vez!'.format(nome, fichas_totais))
 else:
     newprint('Uau! {0}, você teve um lucro de {1} fichas, totalizando em {2}. Parabéns! Que você continue com sorte na próxima vez!'.format(nome, fichas_totais - 500, fichas_totais))
+    
