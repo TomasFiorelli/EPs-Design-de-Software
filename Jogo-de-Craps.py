@@ -137,7 +137,14 @@ while fichas_totais != 0:
         any_craps (dado1,dado2,soma_dados, fichas_totais, aposta)        
 
     elif tipo_de_aposta == 'field':
-        aposta = int(input("Certo, você escolheu a aposta Field! Você possui {0} fichas, quanto você deseja apostar?".format(fichas_totais)))
+        newprint("Certo, você escolheu a aposta Field! Você possui {0} fichas, quanto você deseja apostar?".format(fichas_totais))
+        print()
+
+        aposta = int(input('> '))
+        while aposta > fichas_totais:
+            newprint('Ei {}, você tem que apostar um valor menor ou igual a suas fichas!'.format(nome))
+            aposta = int(input('> '))
+        
         dado1 = random.randint (1,6)
         dado2 = random.randint (1,6)
         soma_dados = dado1 + dado2 
@@ -160,7 +167,14 @@ while fichas_totais != 0:
         field (dado1,dado2,soma_dados, fichas_totais, aposta)
 
     elif tipo_de_aposta == 'pass line bet':
-        aposta = int(input("Certo, você escolheu a aposta Pass Line Bet! Você possui {0} fichas, quanto você deseja apostar?".format(fichas_totais)))
+        newprint("Certo, você escolheu a aposta Pass Line Bet! Você possui {0} fichas, quanto você deseja apostar?".format(fichas_totais))
+        print()
+
+        aposta = int(input('> '))
+        while aposta > fichas_totais:
+            newprint('Ei {}, você tem que apostar um valor menor ou igual a suas fichas!'.format(nome))
+            aposta = int(input('> '))
+        
         dado1 = random.randint (1,6)
         dado2 = random.randint (1,6)
         soma_dados = dado1 + dado2    
@@ -200,4 +214,3 @@ elif fichas_totais <= 500:
     newprint('Puts, {0}, você não teve lucro dessa vez... Você terminou com {1} fichas. Boa sorte na próxima vez!'.format(nome, fichas_totais))
 else:
     newprint('Uau! {0}, você teve um lucro de {1} fichas, totalizando em {2}. Parabéns! Que você continue com sorte na próxima vez!'.format(nome, fichas_totais - 500, fichas_totais))
-    
