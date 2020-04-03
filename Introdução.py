@@ -12,6 +12,7 @@ class style:
 def newprint(texto):
     for indice in range(int(len(texto))):
         print(texto[indice], end = '')
+        time.sleep(0.05)
         
     print()
 
@@ -44,7 +45,7 @@ recebe mais 10). Já se os dados somarem 2, 3 ou 12 (chamado de craps) você per
 seja, se apostou 10 fichas, não recebe nada e perde essas 10). Já se a soma dos dados
 der 4, 5, 6, 8, 9 ou 10 o jogo muda para a fase de “Point” e o objetivo muda. A aposta
 já feita continua valendo, porém, o valor tirado se torna o Point e para ganhar, a soma
-do novo lançamento dos dados deve ser igual ao do Point. Se anova soma dos dados é a
+do novo lançamento dos dados deve ser igual ao do Point. Se a nova soma dos dados é a
 mesma do que foi guardado no Point, o jogador ganha o mesmo valor que apostou. Se sair
 uma soma de valor 7 o jogador perde tudo. Caso saia qualquer outro número, se mantem na
 fase de “Point” sem perder ou ganhar e se continua lançando os dados até um veredito,
