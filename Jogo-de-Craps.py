@@ -105,11 +105,13 @@ while fichas_totais != 0:
             if soma_dados == 12:
                 x= aposta*30
                 fichas_totais = fichas_totais + x
-                print ("Parabéns! Você ganhou {0} fichas! Agora você possui {1} fichas!".format(x, fichas_totais))
+                newprint ("Parabéns! Você ganhou {0} fichas! Agora você possui {1} fichas!".format(x, fichas_totais))
+                print ('\n')
                 return fichas_totais
             else:
                 fichas_totais = fichas_totais - aposta
-                print ("Que pena! Você perdeu {0} fichas! E agora restam {1} fichas!".format(aposta, fichas_totais))
+                newprint ("Que pena! Você perdeu {0} fichas! E agora restam {1} fichas!".format(aposta, fichas_totais))
+                print ('\n')
                 return fichas_totais
 
         fichas_totais = twelve(dado1,dado2,soma_dados, fichas_totais, aposta)  
@@ -130,11 +132,13 @@ while fichas_totais != 0:
             if soma_dados == 2 or soma_dados == 3 or soma_dados == 12:
                 y = aposta*7
                 fichas_totais = fichas_totais + y
-                print ("Parabéns! Você ganhou {0} fichas! Agora você possui {1} fichas!".format(y, fichas_totais))
+                newprint ("Parabéns! Você ganhou {0} fichas! Agora você possui {1} fichas!".format(y, fichas_totais))
+                print ('\n')
                 return fichas_totais
             else:
                 fichas_totais = fichas_totais - aposta
-                print ("Que pena! Você perdeu {0} fichas! E agora restam {1} fichas!".format(aposta, fichas_totais))
+                newprint ("Que pena! Você perdeu {0} fichas! E agora restam {1} fichas!".format(aposta, fichas_totais))
+                print ('\n')
                 return fichas_totais
         fichas_totais = any_craps (dado1,dado2,soma_dados, fichas_totais, aposta)        
 
@@ -154,21 +158,25 @@ while fichas_totais != 0:
             if soma_dados == 3 or soma_dados == 4 or soma_dados == 9 or soma_dados == 10 or soma_dados == 11:
                 p= aposta 
                 fichas_totais = fichas_totais + aposta 
-                print ("Parabéns! Você ganhou {0} fichas! Agora você possui {1} fichas!".format(p, fichas_totais))
+                newprint ("Parabéns! Você ganhou {0} fichas! Agora você possui {1} fichas!".format(p, fichas_totais))
+                print ('\n')
                 return fichas_totais
             elif soma_dados == 5 or soma_dados == 6 or soma_dados == 7 or soma_dados == 8:
                 fichas_totais= fichas_totais - aposta
-                print ("Que pena! Você perdeu {0} fichas! E agora restam {1}!".format(aposta,fichas_totais))
+                newprint ("Que pena! Você perdeu {0} fichas! E agora restam {1}!".format(aposta,fichas_totais))
+                print ('\n')
                 return fichas_totais
             elif soma_dados == 2:
                 p= aposta*2
                 fichas_totais = fichas_totais + p
-                print ("Parabéns! Você ganhou {0} fichas! Agora você possui {1} fichas!".format(p,fichas_totais))
+                newprint ("Parabéns! Você ganhou {0} fichas! Agora você possui {1} fichas!".format(p,fichas_totais))
+                print ()
                 return fichas_totais
             elif soma_dados == 12:
                 p= aposta*3
                 fichas_totais = fichas_totais + p
-                print ("Parabéns! Você ganhou {0} fichas! Agora você possui {1} fichas!".format(p, fichas_totais))
+                newprint ("Parabéns! Você ganhou {0} fichas! Agora você possui {1} fichas!".format(p, fichas_totais))
+                print ()
                 return fichas_totais
         fichas_totais = field (dado1,dado2,soma_dados, fichas_totais, aposta)
 
@@ -177,6 +185,7 @@ while fichas_totais != 0:
         print()
 
         aposta = int(input('> '))
+        
         while aposta > fichas_totais:
             newprint('Ei {}, você tem que apostar um valor menor ou igual a suas fichas!'.format(nome))
             aposta = int(input('> '))
@@ -196,10 +205,17 @@ while fichas_totais != 0:
                 return fichas_totais
             else: # Fase do Point
                 point = soma_dados
+                print ()
+                newprint ("Puts!!! Você caiu no Point!! Você precisa tirar uma soma igual a {0}.".format(point))
+                print ()
+                newprint ("Mas não se esqueça que, se você tirar 7, você perde a sua aposta!!")
+                print ()
                 fase_point = True
                 while fase_point:
                     dado3 = random.randint(1,6)
                     dado4 = random.randint(1,6)
+                    newprint ("Dado 1 = " + str(dado3) + ' / ' + "Dado 2 = " + str(dado4))
+                    print ()
                     nova_soma = dado3 + dado4
                     if nova_soma == 7:
                         fichas_totais = fichas_totais - aposta
@@ -208,10 +224,13 @@ while fichas_totais != 0:
                         return fichas_totais
                     elif nova_soma == point:
                         print('Ufa! Você conseguiu escapar do Point')
-                        break
+                        fase_point = False
+                        return fichas_totais
+                        
                     else:
                         print('Nada vai acontecer com essa soma!')
         fichas_totais = pass_line_bet(dado1, dado2, soma_dados, fichas_totais,aposta)
+        print ()
 
     elif tipo_de_aposta == 'sair':
         break
